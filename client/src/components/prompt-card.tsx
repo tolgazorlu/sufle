@@ -9,6 +9,14 @@ import {
   DialogTrigger,
   DialogFooter,
 } from "./ui/dialog";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 interface PromptCardProps {
   title: string;
@@ -43,8 +51,8 @@ const PromptCard = ({
   };
 
   return (
-    <div className='border rounded-md p-4 flex flex-col gap-2 relative'>
-      <div className='absolute right-2 top-2 flex gap-2 z-10'>
+    <Card className='relative'>
+      <div className='absolute right-4 top-4 flex gap-2 z-10'>
         <Button
           variant='ghost'
           size='icon'
@@ -94,8 +102,8 @@ const PromptCard = ({
         </Dialog>
       </div>
 
-      <div className='flex flex-col gap-1'>
-        <div className='flex flex-wrap gap-2'>
+      <CardHeader>
+        <div className='flex flex-wrap gap-2 mb-2'>
           {categories.map((category, index) => (
             <span
               key={index}
@@ -105,22 +113,28 @@ const PromptCard = ({
             </span>
           ))}
         </div>
-        <h2 className='text-lg font-bold text-gray-400'>{title}</h2>
-      </div>
-      <p className='text-sm text-gray-500'>{description}</p>
-      <h3 className='text-sm text-gray-500'>Example Prompt:</h3>
-      <article
-        className='text-sm text-gray-500 px-4 py-2 border bg-muted rounded
-          hover:text-black dark:hover:text-white transition-all duration-300 
-          overflow-y-auto max-h-48
-          whitespace-pre-wrap font-mono'
-      >
-        {content}
-      </article>
-      <Button onClick={handleBuy} className='mt-4' variant='outline'>
-        Buy for {price} EDU
-      </Button>
-    </div>
+        <CardTitle className='text-lg text-gray-400'>{title}</CardTitle>
+        <CardDescription>{description}</CardDescription>
+      </CardHeader>
+
+      <CardContent>
+        <h3 className='text-sm text-gray-500 mb-2'>Example Prompt:</h3>
+        <div
+          className='text-sm text-gray-500 px-4 py-2 border bg-muted rounded
+            hover:text-foreground transition-all duration-300
+            overflow-y-auto max-h-48
+            whitespace-pre-wrap font-mono'
+        >
+          {content}
+        </div>
+      </CardContent>
+
+      <CardFooter>
+        <Button onClick={handleBuy} className='w-full' variant='outline'>
+          Buy for {price} EDU
+        </Button>
+      </CardFooter>
+    </Card>
   );
 };
 

@@ -91,7 +91,7 @@ export const HomePage = () => {
     <div className=' flex flex-col gap-4 py-4 px-8'>
       <div className='flex flex-col gap-4 w-full'>
         <div className='flex items-center justify-between w-full'>
-          <h2 className='text-2xl font-bold'>Search Prompts</h2>
+          <h2 className='text-xl font-bold'>Search Prompts</h2>
           <Button onClick={() => navigate("/create-prompt")}>
             <Plus className='h-4 w-4 mr-2' />
             Create Prompt
@@ -100,7 +100,7 @@ export const HomePage = () => {
         <div className='relative max-w-xl'>
           <Search className='absolute left-2 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground' />
           <Input
-            className='w-full pl-8'
+            className='w-full pl-8 rounded-xl'
             placeholder='Search prompts...'
             type='search'
             onChange={handleSearch}

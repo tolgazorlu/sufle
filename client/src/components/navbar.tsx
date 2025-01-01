@@ -6,7 +6,9 @@ const Navbar = () => {
     <nav className='h-16 w-full px-8 border-b'>
       <div className='flex items-center justify-between h-full'>
         <div className='flex items-center gap-2'>
-          <span className='text-xl font-bold font-orbitron'>sufle.xyz</span>
+          <span className='text-xl font-bold font-orbitron text-primary'>
+            sufle.xyz
+          </span>
         </div>
         <div className='flex items-center gap-2'>
           <Button size='sm' variant='secondary'>
