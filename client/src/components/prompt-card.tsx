@@ -111,7 +111,7 @@ const PromptCard = ({
       <h3 className='text-sm text-gray-500'>Example Prompt:</h3>
       <article
         className='text-sm text-gray-500 px-4 py-2 border bg-muted rounded
-          hover:text-white transition-all duration-300 
+          hover:text-black dark:hover:text-white transition-all duration-300 
           overflow-y-auto max-h-48
           whitespace-pre-wrap font-mono'
       >
