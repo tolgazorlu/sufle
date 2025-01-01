@@ -9,7 +9,9 @@ const Navbar = () => {
           <span className='text-xl font-bold font-orbitron'>sufle.xyz</span>
         </div>
         <div className='flex items-center gap-2'>
-          <Button size='sm'>Login with OCID</Button>
+          <Button size='sm' variant='secondary'>
+            Login with OCID
+          </Button>
           <ModeToggle />
         </div>
       </div>
