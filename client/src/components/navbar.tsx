@@ -7,6 +7,7 @@ import {
   Sun,
   Moon,
   Laptop,
+  PanelRight,
 } from "lucide-react";
 import { ModeToggle } from "./mode-toggle";
 import { Button } from "./ui/button";
@@ -18,7 +19,6 @@ import {
   DropdownMenuGroup,
   DropdownMenuSeparator,
   DropdownMenuItem,
-  DropdownMenuShortcut,
   DropdownMenuTrigger,
   DropdownMenuLabel,
   DropdownMenuSub,
@@ -68,7 +68,12 @@ const Navbar = () => {
                   <DropdownMenuItem>
                     <User />
                     <span>Profile</span>
-                    <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to='/dashboard'>
+                      <PanelRight className='mr-2 h-4 w-4' />
+                      <span>Dashboard</span>
+                    </Link>
                   </DropdownMenuItem>
                   <DropdownMenuSub>
                     <DropdownMenuSubTrigger>

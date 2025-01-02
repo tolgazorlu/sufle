@@ -1,8 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import { LoginCallBack } from "@opencampus/ocid-connect-js";
 import HomeLayout from "./Layout/HomeLayout";
+import DashboardLayout from "./Layout/DashboardLayout";
 import { HomePage } from "./pages/HomePage";
 import { CreatePromptPage } from "./pages/CreatePromptPage";
+import DashboardPage from "./pages/DashboardPage";
 
 const onLoginSuccess = () => {
   console.log("success");
@@ -28,10 +30,6 @@ export const routes = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: "/create-prompt",
-        element: <CreatePromptPage />,
-      },
-      {
         path: "/redirect",
         element: (
           <LoginCallBack
@@ -40,6 +38,21 @@ export const routes = createBrowserRouter([
           />
         ),
       },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: <DashboardLayout />,
+    children: [
+      {
+        index: true,
+        element: <DashboardPage />,
+      },
+      {
+        path: "create-prompt",
+        element: <CreatePromptPage />,
+      },
+      // Add more dashboard routes here as needed
     ],
   },
 ]);
