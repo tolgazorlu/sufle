@@ -12,7 +12,7 @@ const Navbar = () => {
             to='/'
             className='text-xl font-bold font-orbitron text-primary hover:opacity-80 transition-opacity flex items-center gap-2'
           >
-            <BrainCircuit />
+            <BrainCircuit strokeWidth={1.5} />
             sufle
           </Link>
         </div>

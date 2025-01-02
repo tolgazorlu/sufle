@@ -152,7 +152,7 @@ export const HomePage = () => {
       <DropdownMenuSeparator className='w-full bg-secondary-foreground/10' />
       <div className='px-8 flex flex-col gap-2'>
         <Label className='text-lg font-semibold'>Search Prompts</Label>
-        <div className='relative w-1/2'>
+        <div className='relative lg:w-1/2'>
           <Search className='absolute left-2 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground' />
           <Input
             className='w-full pl-8 rounded-lg bg-muted '
