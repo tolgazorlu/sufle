@@ -92,7 +92,7 @@ export const HomePage = () => {
     <div className='flex flex-col gap-4 py-4 px-8'>
       <div className='flex flex-col gap-2 py-6 items-start'>
         <span className='text-sm text-secondary-foreground/80'>
-          Monorepo Support
+          Check out our new AI Agents
         </span>
         <div className='flex flex-col gap-1'>
           <span className='text-4xl font-bold'>AI Prompt Marketplace</span>
