@@ -223,7 +223,11 @@ export const HomePage = () => {
   });
 
   return (
-    <div className='flex flex-col gap-4 '>
+    <div className='flex flex-col gap-4'>
+      <div className='hidden md:block absolute inset-0 h-full w-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:64px_64px] -z-50'>
+        <div className='hidden md:block inset-0 top-1/4 h-2/3 w-full bg-gradient-to-br from-blue-500 to-black blur-3xl opacity-20'></div>
+        <div className='hidden md:block top-2/4 right-0 h-2/3 w-full bg-gradient-to-br from-purple-500 to-black blur-3xl opacity-20'></div>
+      </div>
       <div className='flex flex-col gap-2 items-start py-4 px-8'>
         <span className='text-sm text-secondary-foreground/80'>
           Check out our new AI Agents
@@ -254,7 +258,7 @@ export const HomePage = () => {
         <div className='relative lg:w-1/2'>
           <Search className='absolute left-2 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground' />
           <Input
-            className='w-full pl-8 rounded-lg bg-secondary/50 '
+            className='w-full pl-8 rounded-lg bg-secondary-foreground/10'
             placeholder='Search prompts...'
             type='search'
             onChange={handleSearch}
@@ -262,7 +266,7 @@ export const HomePage = () => {
         </div>
       </div>
 
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-8'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 px-8'>
         {filteredPrompts.map((prompt, index) => (
           <PromptCard key={index} {...prompt} />
         ))}
