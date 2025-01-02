@@ -54,7 +54,7 @@ const PromptCard = ({
 
   return (
     <Card>
-      <CardHeader className='px-2 py-2 '>
+      <CardHeader className='px-2 py-2'>
         <div className='flex gap-1 justify-between items-center flex-row'>
           <div className='flex gap-1 items-center justify-start'>
             {categories.map((category, index) => (
@@ -63,23 +63,23 @@ const PromptCard = ({
               </Badge>
             ))}
           </div>
-          <div className='flex gap-2'>
+          <div className='flex gap-1'>
             <Button
               variant='ghost'
               size='icon'
-              className='h-8 w-8'
+              className='h-6 w-6'
               onClick={handleCopy}
             >
               <Copy
-                className={`h-4 w-4 ${
+                className={`h-2 w-2 ${
                   copied ? "text-green-500" : "text-gray-500"
                 }`}
               />
             </Button>
             <Dialog>
               <DialogTrigger asChild>
-                <Button variant='ghost' size='icon' className='h-8 w-8'>
-                  <Expand className='h-4 w-4 text-gray-500' />
+                <Button variant='ghost' size='icon' className='h-6 w-6'>
+                  <Expand className='h-2 w-2 text-gray-500' />
                 </Button>
               </DialogTrigger>
               <DialogContent className='max-w-3xl max-h-[80vh] overflow-y-auto'>
@@ -120,7 +120,7 @@ const PromptCard = ({
         <DropdownMenuSeparator />
       </CardHeader>
 
-      <CardContent className='py-4'>
+      <CardContent className='py-2'>
         <CardTitle className='text-xl'>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
         <div className='space-y-2 mt-4'>

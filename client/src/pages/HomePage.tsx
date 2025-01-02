@@ -7,6 +7,7 @@ import { useDebounce } from "@/hooks/use-debounce";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { DropdownMenuSeparator } from "@/components/ui/dropdown-menu";
+import { Label } from "@/components/ui/label";
 
 // Mock data for demonstration
 const mockPrompts = [
@@ -89,8 +90,8 @@ export const HomePage = () => {
   });
 
   return (
-    <div className='flex flex-col gap-4 py-4 px-8'>
-      <div className='flex flex-col gap-2 py-6 items-start'>
+    <div className='flex flex-col gap-4 '>
+      <div className='flex flex-col gap-2 py-6 items-start py-4 px-8'>
         <span className='text-sm text-secondary-foreground/80'>
           Check out our new AI Agents
         </span>
@@ -113,19 +114,22 @@ export const HomePage = () => {
           </Button>
         </div>
       </div>
-      <DropdownMenuSeparator className='w-full' />
-      <div className='relative w-1/2'>
-        <Search className='absolute left-2 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground' />
-        <Input
-          className='w-full pl-8 rounded-xl'
-          placeholder='Search prompts...'
-          type='search'
-          onChange={handleSearch}
-        />
+      <DropdownMenuSeparator className='w-full bg-secondary-foreground/10' />
+      <div className='px-8 flex flex-col gap-2'>
+        <Label className='text-lg font-semibold'>Search Prompts</Label>
+        <div className='relative w-1/2'>
+          <Search className='absolute left-2 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground' />
+          <Input
+            className='w-full pl-8 rounded-lg bg-muted '
+            placeholder='Search prompts...'
+            type='search'
+            onChange={handleSearch}
+          />
+        </div>
       </div>
-      <DropdownMenuSeparator className='w-full' />
+      <DropdownMenuSeparator className='w-full bg-secondary-foreground/10' />
 
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-4 px-8'>
         {filteredPrompts.map((prompt, index) => (
           <PromptCard key={index} {...prompt} />
         ))}
