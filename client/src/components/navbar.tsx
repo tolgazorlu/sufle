@@ -1,3 +1,4 @@
+import { BrainCircuit } from "lucide-react";
 import { ModeToggle } from "./mode-toggle";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
@@ -9,9 +10,10 @@ const Navbar = () => {
         <div className='flex items-center gap-2'>
           <Link
             to='/'
-            className='text-xl font-bold font-orbitron text-primary hover:opacity-80 transition-opacity'
+            className='text-xl font-bold font-orbitron text-primary hover:opacity-80 transition-opacity flex items-center gap-2'
           >
-            sufle.xyz
+            <BrainCircuit />
+            sufle
           </Link>
         </div>
         <div className='flex items-center gap-2'>
