@@ -95,9 +95,7 @@ export const HomePage = () => {
           Monorepo Support
         </span>
         <div className='flex flex-col gap-1'>
-          <span className='text-4xl font-bold font-orbitron'>
-            AI Prompt Marketplace
-          </span>
+          <span className='text-4xl font-bold'>AI Prompt Marketplace</span>
           <span className='text-lg text-secondary-foreground/80'>
             Find AI Prompts for professional projects like AI Agents, Chatbots,
             and more
