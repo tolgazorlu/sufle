@@ -1,11 +1,12 @@
 import { useSearchStore } from "@/store/search-store";
 import PromptCard from "@/components/prompt-card";
 import { Input } from "@/components/ui/input";
-import { Search, Plus } from "lucide-react";
+import { Search } from "lucide-react";
 import { useCallback } from "react";
 import { useDebounce } from "@/hooks/use-debounce";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import { DropdownMenuSeparator } from "@/components/ui/dropdown-menu";
 
 // Mock data for demonstration
 const mockPrompts = [
@@ -88,25 +89,44 @@ export const HomePage = () => {
   });
 
   return (
-    <div className=' flex flex-col gap-4 py-4 px-8'>
-      <div className='flex flex-col gap-4 w-full'>
-        <div className='flex items-center justify-between w-full'>
-          <h2 className='text-xl font-bold'>Search Prompts</h2>
+    <div className='flex flex-col gap-4 py-4 px-8'>
+      <div className='flex flex-col gap-2 py-6 items-start'>
+        <span className='text-sm text-secondary-foreground/80'>
+          Monorepo Support
+        </span>
+        <div className='flex flex-col gap-1'>
+          <span className='text-4xl font-bold font-orbitron'>
+            AI Prompt Marketplace
+          </span>
+          <span className='text-lg text-secondary-foreground/80'>
+            Find AI Prompts for professional projects like AI Agents, Chatbots,
+            and more
+          </span>
+        </div>
+        <div className='flex gap-2'>
           <Button onClick={() => navigate("/create-prompt")}>
-            <Plus className='h-4 w-4 mr-2' />
             Create Prompt
           </Button>
-        </div>
-        <div className='relative max-w-xl'>
-          <Search className='absolute left-2 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground' />
-          <Input
-            className='w-full pl-8 rounded-xl'
-            placeholder='Search prompts...'
-            type='search'
-            onChange={handleSearch}
-          />
+          <Button
+            variant={"secondary"}
+            onClick={() => navigate("/create-prompt")}
+          >
+            Github
+          </Button>
         </div>
       </div>
+      <DropdownMenuSeparator className='w-full' />
+      <div className='relative w-1/2'>
+        <Search className='absolute left-2 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground' />
+        <Input
+          className='w-full pl-8 rounded-xl'
+          placeholder='Search prompts...'
+          type='search'
+          onChange={handleSearch}
+        />
+      </div>
+      <DropdownMenuSeparator className='w-full' />
+
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
         {filteredPrompts.map((prompt, index) => (
           <PromptCard key={index} {...prompt} />
