@@ -65,7 +65,7 @@ const PromptCard = ({
           <div className='flex gap-1 items-center justify-start'>
             {categories.map((category, index) => (
               <Badge
-                className='bg-secondary-foreground text-secondary shadow-none'
+                className='bg-secondary text-secondary-foreground shadow-none'
                 key={index}
               >
                 {category}
@@ -138,34 +138,34 @@ const PromptCard = ({
         </div>
       </CardHeader>
 
-      <CardContent className='px-4 py-2'>
-        <CardTitle className='text-lg text-secondary-foreground font-bold'>
+      <CardContent className='px-4'>
+        <CardTitle className='text-lg text-secondary-foreground font-bold mt-4'>
           {title}
         </CardTitle>
         <CardDescription className='text-sm text-secondary-foreground/60 font-medium'>
           {description}
         </CardDescription>
         <div className='space-y-2 mt-2'>
-          <div className='text-sm bg-secondary/20 border rounded-lg border-secondary text-secondary-foreground/60 p-3 overflow-y-auto max-h-48 whitespace-pre-wrap h-48 hover:bg-secondary transition-all duration-300'>
+          <div className='text-sm bg-secondary/20 rounded-lg border-secondary text-secondary-foreground/60 p-3 overflow-y-auto max-h-48 whitespace-pre-wrap h-48 hover:bg-secondary transition-all duration-300 font-serif'>
             {content}
           </div>
         </div>
       </CardContent>
 
-      <CardFooter className='flex flex-col gap-4 px-4'>
-        <div className='flex items-center justify-between w-full'>
-          <div className='flex items-center gap-2'>
-            <Avatar className='h-8 w-8'>
-              <AvatarImage src={user.avatar} alt={user.name} />
-              <AvatarFallback>{user.name.charAt(0)}</AvatarFallback>
-            </Avatar>
-            <div className='flex flex-col'>
-              <span className='text-sm font-medium'>{user.name}</span>
-              <span className='text-xs text-muted-foreground'>{user.job}</span>
-            </div>
+      <CardFooter className='flex gap-4 px-4 justify-between'>
+        <div className='flex items-center gap-2'>
+          <Avatar className='h-8 w-8'>
+            <AvatarImage src={user.avatar} alt={user.name} />
+            <AvatarFallback>{user.name.charAt(0)}</AvatarFallback>
+          </Avatar>
+          <div className='flex flex-col'>
+            <span className='text-sm font-medium'>{user.name}</span>
+            <span className='text-xs text-muted-foreground'>{user.job}</span>
           </div>
-          <Button onClick={handleBuy}>Buy for {price} EDU</Button>
         </div>
+        <Button onClick={handleBuy} variant='default'>
+          Buy for {price} EDU
+        </Button>
       </CardFooter>
     </Card>
   );
