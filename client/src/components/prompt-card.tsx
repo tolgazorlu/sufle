@@ -65,7 +65,7 @@ const PromptCard = ({
           <div className='flex gap-1 items-center justify-start'>
             {categories.map((category, index) => (
               <Badge
-                className='bg-secondary text-secondary-foreground shadow-none'
+                className='bg-secondary-foreground text-secondary shadow-none'
                 key={index}
               >
                 {category}
@@ -139,10 +139,14 @@ const PromptCard = ({
       </CardHeader>
 
       <CardContent className='px-4 py-2'>
-        <CardTitle className='text-xl'>{title}</CardTitle>
-        <CardDescription className='text-md'>{description}</CardDescription>
+        <CardTitle className='text-lg text-secondary-foreground font-bold'>
+          {title}
+        </CardTitle>
+        <CardDescription className='text-sm text-secondary-foreground/60 font-medium'>
+          {description}
+        </CardDescription>
         <div className='space-y-2 mt-2'>
-          <div className='text-sm bg-secondary/40 dark:bg-secondary/20 text-gray-600 dark:text-gray-400 rounded-lg p-3 overflow-y-auto max-h-48 whitespace-pre-wrap font-mono min-h-32'>
+          <div className='text-sm bg-secondary/20 border rounded-lg border-secondary text-secondary-foreground/60 p-3 overflow-y-auto max-h-48 whitespace-pre-wrap h-48 hover:bg-secondary transition-all duration-300'>
             {content}
           </div>
         </div>
