@@ -18,7 +18,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "./ui/badge";
-import { DropdownMenuSeparator } from "./ui/dropdown-menu";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 interface PromptCardProps {
   title: string;
@@ -26,6 +26,11 @@ interface PromptCardProps {
   content: string;
   price: number;
   categories: string[];
+  user: {
+    name: string;
+    avatar: string;
+    job: string;
+  };
 }
 
 const PromptCard = ({
@@ -34,6 +39,7 @@ const PromptCard = ({
   content,
   price,
   categories,
+  user,
 }: PromptCardProps) => {
   const [copied, setCopied] = useState(false);
 
@@ -54,11 +60,14 @@ const PromptCard = ({
 
   return (
     <Card>
-      <CardHeader className='px-2 py-2'>
+      <CardHeader className='px-2 py-2 border-b bg-muted rounded-t-xl'>
         <div className='flex gap-1 justify-between items-center flex-row'>
           <div className='flex gap-1 items-center justify-start'>
             {categories.map((category, index) => (
-              <Badge variant={"secondary"} key={index}>
+              <Badge
+                className='bg-slate-400 text-white shadow-none'
+                key={index}
+              >
                 {category}
               </Badge>
             ))}
@@ -88,7 +97,18 @@ const PromptCard = ({
                 </DialogHeader>
                 <div className='mt-4'>
                   <div className='flex justify-between items-center mb-4'>
-                    <h3 className='font-semibold'>Description</h3>
+                    <div className='flex items-center gap-2'>
+                      <Avatar className='h-8 w-8'>
+                        <AvatarImage src={user.avatar} alt={user.name} />
+                        <AvatarFallback>{user.name.charAt(0)}</AvatarFallback>
+                      </Avatar>
+                      <div className='flex flex-col'>
+                        <span className='text-sm font-medium'>{user.name}</span>
+                        <span className='text-xs text-muted-foreground'>
+                          {user.job}
+                        </span>
+                      </div>
+                    </div>
                     <div className='flex items-center gap-2'>
                       <span className='text-sm font-medium text-muted-foreground'>
                         Price:
@@ -116,28 +136,33 @@ const PromptCard = ({
             </Dialog>
           </div>
         </div>
-
-        <DropdownMenuSeparator />
       </CardHeader>
 
-      <CardContent className='py-2'>
-        <CardTitle className='text-xl'>{title}</CardTitle>
-        <CardDescription>{description}</CardDescription>
-        <div className='space-y-2 mt-4'>
-          <h3 className='text-sm font-medium'>Example Output:</h3>
-          <div className='text-sm bg-muted rounded-lg p-4 overflow-y-auto max-h-48 whitespace-pre-wrap font-mono min-h-32'>
+      <CardContent className='px-4 py-2'>
+        <CardTitle className='text-lg'>{title}</CardTitle>
+        <CardDescription className='text-sm'>{description}</CardDescription>
+        <div className='space-y-2 mt-2'>
+          <div className='text-sm bg-muted text-gray-600 dark:text-gray-400 rounded-lg p-3 overflow-y-auto max-h-48 whitespace-pre-wrap font-mono min-h-32'>
             {content}
           </div>
         </div>
       </CardContent>
 
-      <CardFooter>
-        <Button onClick={handleBuy} className='w-full'>
-          Buy Prompt
-        </Button>
+      <CardFooter className='flex flex-col gap-4 px-4'>
+        <div className='flex items-center justify-between w-full'>
+          <div className='flex items-center gap-2'>
+            <Avatar className='h-8 w-8'>
+              <AvatarImage src={user.avatar} alt={user.name} />
+              <AvatarFallback>{user.name.charAt(0)}</AvatarFallback>
+            </Avatar>
+            <div className='flex flex-col'>
+              <span className='text-sm font-medium'>{user.name}</span>
+              <span className='text-xs text-muted-foreground'>{user.job}</span>
+            </div>
+          </div>
+          <Button onClick={handleBuy}>Buy for {price} EDU</Button>
+        </div>
       </CardFooter>
-
-      {/* Action buttons in the top-right corner */}
     </Card>
   );
 };

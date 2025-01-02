@@ -17,6 +17,11 @@ const mockPrompts = [
     content: "You are a professional story writer...",
     price: 50,
     categories: ["Creative Writing", "Fiction"],
+    user: {
+      name: "Alice Cooper",
+      avatar: "/avatars/alice.jpg",
+      job: "Creative Writer",
+    },
   },
   {
     title: "Technical Documentation Expert",
@@ -24,6 +29,11 @@ const mockPrompts = [
     content: "As a technical writer with expertise in...",
     price: 35,
     categories: ["Technical Writing", "Documentation"],
+    user: {
+      name: "Bob Smith",
+      avatar: "/avatars/bob.jpg",
+      job: "Technical Writer",
+    },
   },
   {
     title: "SEO Content Optimizer",
@@ -31,6 +41,11 @@ const mockPrompts = [
     content: "Analyze and optimize content following SEO best practices...",
     price: 45,
     categories: ["Marketing", "SEO"],
+    user: {
+      name: "Charlie Davis",
+      avatar: "/avatars/charlie.jpg",
+      job: "SEO Specialist",
+    },
   },
   {
     title: "Product Description Writer",
@@ -38,6 +53,11 @@ const mockPrompts = [
     content: "Create persuasive product descriptions that highlight...",
     price: 30,
     categories: ["E-commerce", "Copywriting"],
+    user: {
+      name: "Eve Adams",
+      avatar: "/avatars/eve.jpg",
+      job: "Copywriter",
+    },
   },
   {
     title: "Academic Essay Assistant",
@@ -45,6 +65,11 @@ const mockPrompts = [
     content: "Guide students through the process of writing...",
     price: 55,
     categories: ["Academic", "Education"],
+    user: {
+      name: "Grace Evans",
+      avatar: "/avatars/grace.jpg",
+      job: "Educator",
+    },
   },
   {
     title: "Social Media Manager",
@@ -52,6 +77,11 @@ const mockPrompts = [
     content: "Generate creative and trending social media posts...",
     price: 40,
     categories: ["Social Media", "Marketing"],
+    user: {
+      name: "Hank Harris",
+      avatar: "/avatars/hank.jpg",
+      job: "Social Media Manager",
+    },
   },
   {
     title: "Code Documentation Generator",
@@ -59,6 +89,11 @@ const mockPrompts = [
     content: "Create detailed documentation for your codebase...",
     price: 60,
     categories: ["Programming", "Documentation"],
+    user: {
+      name: "Ivy Johnson",
+      avatar: "/avatars/ivy.jpg",
+      job: "Software Developer",
+    },
   },
 ];
 
