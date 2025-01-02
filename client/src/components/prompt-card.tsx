@@ -60,12 +60,12 @@ const PromptCard = ({
 
   return (
     <Card>
-      <CardHeader className='px-2 py-2 border-b bg-muted rounded-t-xl'>
+      <CardHeader className='px-2 py-2 border-b bg-secondary/20 rounded-t-xl'>
         <div className='flex gap-1 justify-between items-center flex-row'>
           <div className='flex gap-1 items-center justify-start'>
             {categories.map((category, index) => (
               <Badge
-                className='bg-slate-400 text-white shadow-none'
+                className='bg-secondary text-secondary-foreground shadow-none'
                 key={index}
               >
                 {category}
@@ -74,7 +74,7 @@ const PromptCard = ({
           </div>
           <div className='flex gap-1'>
             <Button
-              variant='ghost'
+              variant='outline'
               size='icon'
               className='h-6 w-6'
               onClick={handleCopy}
@@ -87,7 +87,7 @@ const PromptCard = ({
             </Button>
             <Dialog>
               <DialogTrigger asChild>
-                <Button variant='ghost' size='icon' className='h-6 w-6'>
+                <Button variant='outline' size='icon' className='h-6 w-6'>
                   <Expand className='h-2 w-2 text-gray-500' />
                 </Button>
               </DialogTrigger>
@@ -139,10 +139,10 @@ const PromptCard = ({
       </CardHeader>
 
       <CardContent className='px-4 py-2'>
-        <CardTitle className='text-lg'>{title}</CardTitle>
-        <CardDescription className='text-sm'>{description}</CardDescription>
+        <CardTitle className='text-xl'>{title}</CardTitle>
+        <CardDescription className='text-md'>{description}</CardDescription>
         <div className='space-y-2 mt-2'>
-          <div className='text-sm bg-muted text-gray-600 dark:text-gray-400 rounded-lg p-3 overflow-y-auto max-h-48 whitespace-pre-wrap font-mono min-h-32'>
+          <div className='text-sm bg-secondary/40 dark:bg-secondary/20 text-gray-600 dark:text-gray-400 rounded-lg p-3 overflow-y-auto max-h-48 whitespace-pre-wrap font-mono min-h-32'>
             {content}
           </div>
         </div>

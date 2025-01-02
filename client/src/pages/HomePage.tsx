@@ -126,7 +126,7 @@ export const HomePage = () => {
 
   return (
     <div className='flex flex-col gap-4 '>
-      <div className='flex flex-col gap-2 py-6 items-start py-4 px-8'>
+      <div className='flex flex-col gap-2 items-start py-4 px-8'>
         <span className='text-sm text-secondary-foreground/80'>
           Check out our new AI Agents
         </span>

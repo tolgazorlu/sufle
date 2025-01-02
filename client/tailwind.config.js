@@ -54,6 +54,9 @@ module.exports = {
     },
     fontFamily: {
       orbitron: ["Orbitron", "sans-serif"],
+      sans: ["ui-sans-serif", "system-ui"],
+      serif: ["ui-serif", "Georgia"],
+      mono: ["ui-monospace", "SFMono-Regular"],
     },
   },
   plugins: [require("tailwindcss-animate", "@tailwindcss/typography")],
