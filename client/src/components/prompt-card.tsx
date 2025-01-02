@@ -88,7 +88,7 @@ const PromptCard = ({
                 {description}
               </p>
 
-              <h3 className='font-semibold mb-2'>Example Prompt</h3>
+              <h3 className='font-semibold mb-2'>Example Output:</h3>
               <div className='bg-muted rounded-lg p-4 whitespace-pre-wrap font-mono text-sm'>
                 {content}
               </div>
@@ -118,7 +118,7 @@ const PromptCard = ({
       </CardHeader>
 
       <CardContent>
-        <h3 className='text-sm text-gray-500 mb-2'>Example Prompt:</h3>
+        <h3 className='text-sm text-gray-500 mb-2'>Example Output:</h3>
         <div
           className='text-sm text-gray-500 px-4 py-2 border bg-muted rounded
             hover:text-foreground transition-all duration-300
